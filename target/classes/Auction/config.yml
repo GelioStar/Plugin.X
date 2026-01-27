@@ -1,0 +1,229 @@
+DBMySQL:
+  enable: true
+  host: '127.0.0.1'
+  port: 3306
+  database: 'database'
+  user: 'user'
+  password: 'password'
+
+command_messages:
+  errorMessage: "&7Команда введена некорректно или у Вас нет прав на её использование."
+  errorCoinMessage: "&7Стоимость товара должна находиться в пределах от &f100 &f₽ &7до &f15,000,000 &f₽"
+  errorItemMessage: "&7Товар не может быть пустотой или воздухом!"
+  errorConsoleMessage: "&7Эту команду может выполнить только игрок. Дальнейшее выполнение остановлено."
+  errorPlayer: "&7Указанный игрок не продает предметы или отсутствует на сервере."
+  errorSlotsFull: "&7Все доступные слоты Аукциона заняты. Максимум: &f{slots}&7."
+  errorFlagMessage: "&7Флаги указаны неверно. Ознакомьтесь со списком доступных флагов на &fА&fу&fк&fц&fи&fо&fн&fе&7."
+  errorUnknownFlagMessage: "&7Найден неизвестный флаг: &f{flag}&7. Ознакомьтесь со списком доступных флагов на &fА&fу&fк&fц&fи&fо&fн&fе&7."
+
+  successShowpieceSlot: "&7Вы успешно выставили &f{itemName} &fx{amount}&7 за &f{price} &f₽"
+  successSlot: "&7Вы приобрели &f{itemName} &fx{amount}&7 у продавца &fSellerPlayer&7 за &f{price} &f₽"
+  successBuySlot: "&7Ваш товар &f{itemName} &fx{amount}&7 был куплен игроком &fBuyerPlayer&7 за &f{price} &f₽"
+
+intervalMillis:
+  slot: 86400000
+coinsValue:
+  minValue: 100
+  maxValue: 15000000
+
+ShowPiece:
+  buildLore:
+    - " "
+    - " &f&7 ID: &f{id}"
+    - " &f&7 Категория: &f{category}"
+    - " &f&7 Продавец: &fSellerPlayer"
+  buildLoreInfo:
+    price:
+      multi:
+        total: " &f&7 Цена за товар: &f{total_price} &f₽"
+        unit_expired: " &f&7 Цена за ед. товара: &f{unit_price} &f₽"
+        unit_active: " &f&7 Цена за ед. товара: &f{unit_price} &f₽"
+      single: " &f&7 Цена за товар: &f{total_price} &f₽"
+    expire: " &f&7 Истекает через: {expire_time}"
+    empty_line_condition: true
+
+Items:
+  SellersAuctionItem:
+    slot: 45
+    AuctionItem:
+      material: DIAMOND
+      amount: 1
+      name: " "
+      lore:
+        - " &fСобственные товары  "
+        - " "
+        - " &f&7 Нажмите, чтобы посмотреть "
+        - " &f&7 список собственных товаров "
+        - " &f&7 на Аукционе. "
+        - " "
+    SellersItem:
+      material: DIAMOND
+      amount: 1
+      name: " "
+      lore:
+        - " &fТовары на Аукционе  "
+        - " "
+        - " &f&7 Нажмите, чтобы посмотреть "
+        - " &f&7 список товаров на Аукционе.  "
+        - " "
+
+  AuctionExpiredItem:
+    slot: 46
+    AuctionItem:
+      material: GHAST_TEAR
+      amount: 1
+      name: " "
+      lore:
+        - " &fНераспроданные товары  "
+        - " "
+        - " &f&7 Нажмите, чтобы посмотреть  "
+        - " &f&7 список нераспроданных товаров.  "
+        - " "
+    ExpiredItem:
+      material: GHAST_TEAR
+      amount: 1
+      name: " "
+      lore:
+        - " &fТовары на Аукционе  "
+        - " "
+        - " &f&7 Нажмите, чтобы посмотреть  "
+        - " &f&7 список товаров на Аукционе.  "
+        - " "
+
+  UpdaterButton:
+    slot: 47
+    material: ENCHANTED_BOOK
+    amount: 1
+    name: " "
+    lore:
+      - " &f Обновить список  "
+      - " "
+      - " &f&7 Нажмите, чтобы обновить  "
+      - " &f&7 список предметов.  "
+      - " "
+
+  DescriptionItem:
+    slot: 49
+    material: TOTEM_OF_UNDYING
+    amount: 1
+    name: " "
+    lore:
+      - " &fДля чего нужен Аукцион?  "
+      - " "
+      - "&f&7 &fАукцион &7- это удобная система, "
+      - "&f&7 где игроки могут покупать и  "
+      - "&f&7 продавать разнообразные вещи.  "
+      - " "
+      - "&f&7 Основной валютой расчетов  "
+      - "&f&7 служат Рубли.  "
+      - "&f&7 &fРубль &7- это главная валюта.  "
+      - "&f&7 Их можно использовать для  "
+      - "&f&7 торговли с другими игроками.  "
+      - " "
+
+
+  SQLModeSwitcher:
+    slot: 51
+    material: HOPPER
+    amount: 1
+    name: " "
+    lore:
+      header:
+        - " &fОтсортировать предметы по:  "
+        - " "
+      modes:
+        - "Самые новые"
+        - "Самые старые"
+        - "Самые дешёвые"
+        - "Самые дорогие"
+        - "Самые дешёвые за ед."
+        - "Самые дорогие за ед."
+      markers:
+        active: "&f⏺"
+        inactive: "&7•"
+      colors:
+        active: "&f"
+        inactive: "&7"
+      footer:
+        - " "
+  SQLCategorySwitcher:
+    slot: 52
+    material: CHEST
+    amount: 1
+    name: " "
+    lore:
+      header:
+        - " &fКатегория предметов:  "
+        - " "
+      categories:
+        - "Все предметы"
+        - "Строительство"
+        - "Декорирование"
+        - "Оружие и доспехи"
+        - "Инструменты"
+        - "Транспорт"
+        - "Еда"
+        - "Механизмы"
+        - "Зельеварение"
+        - "Зачарование"
+        - "Разное"
+      markers:
+        active: "&f⏺"
+        inactive: "&7•"
+      colors:
+        active: "&f"
+        inactive: "&7"
+      footer:
+        - " "
+
+  CommandsItem:
+    slot: 53
+    material: DRAGON_EGG
+    amount: 1
+    name: " "
+    lore:
+      - " &fДоступные команды Аукциона  "
+      - " "
+      - "&f&f /ah &7- открыть меню Аукциона.  "
+      - " "
+      - "&f&f /ah sell <coins> &7- выставить  "
+      - "&f&7 предмет из основной руки  "
+      - "&f&7 на продажу в Аукционе.  "
+      - "&f&7 &f<coins> &7- это число реклонов,  "
+      - "&f&7 которое должно находиться  "
+      - "&f&7 в пределах от &f{min_coins} &f₽  "
+      - "&f&7 до &f{max_coins} &f₽&7.  "
+      - " "
+      - "&f&f /ah player <name> &7- просмотр  "
+      - "&f&7 всех предметов, выставленных  "
+      - "&f&7 определенным игроком по нику.  "
+      - " "
+
+
+  AcceptSellValue:
+    ShowPieceLore:
+      - " "
+      - " &f&7 Категория: &f{category}"
+      - " &f&7 Продавец: &fSellerPlayer"
+      - " &f&7 Цена за товар: &f{total_price} &f₽"
+      - " &f&7 Цена за ед. товара: &f{unit_price} &f₽"
+      - " &f&7 Истекает через: &f{expire_time}"
+
+
+Wiki:
+  id: "custom_wiki_book" # Уникальный идентификатор
+  title: "&fВаша Wiki Книга"
+  author: "&fАдминистрация"
+  pages:
+    Page1:
+      - "&fДобро пожаловать в гайд!"
+      - "{link: &7[Перейти к главе 1]}&7 - Основы игры."
+      - "{link: &7[Перейти к главе 2]}&7 - Продвинутые механики."
+    Page2:
+      - "&fГлава 1: Основы"
+      - "&7Здесь описаны базовые механики."
+      - "{link: &7[Вернуться в начало]}&7 - Назад."
+    Page3:
+      - "&fГлава 2: Продвинутое"
+      - "&7Секретные фишки и лайфхаки."
+      - "{link: &7[Вернуться в начало]}"

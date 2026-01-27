@@ -1,0 +1,19 @@
+name: VariableX
+version: '0.1'
+main: server.variplex.VariableX
+api-version: 1.18
+authors: [CU8ER]
+description: Copyright Variplex 2026. Все права защищены.
+website: https://variplex.ru
+
+commands:
+  # Auction
+  ah: {}
+
+  #RegionBlocks
+  protections: {}
+
+  # Thunderbolt
+  thunderbolt: {}
+
+  variable: {}

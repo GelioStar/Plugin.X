@@ -1,0 +1,41 @@
+armorStandCount: 15
+durationTicks: 40
+minRadius: 2.8
+maxRadius: 3.0
+tetaAngle: 285.0
+minSeparation: 0.6
+
+perStandFlightTicks: 40
+betweenFlightDelayTicks: 5
+switchCoefficient: 0.35
+switchIncrement: 0.002
+
+laserStep: 0.1
+particleID: ELECTRIC_SPARK
+# particleID: REDSTONE
+
+laser.fadeInTicks: 4
+laser.onTicks: 5
+laser.fadeOutTicks: 4
+laser.offMaxDelay: 30
+
+armorStandHeadList:
+  item1: [ "&#E1C1EC&l«&#E1C1EC&lC&#EBD6F2&lᴏ&#F5EAF9&lʀ&#FFFFFF&lᴇ»", WHITE_SHULKER_BOX, 0.131, "&#EBD6F2" ]
+  item2: [ "&#2126DB&l«&#3735E2&lC&#4D44E9&lᴜ&#6454F1&lʙ&#7A63F8&lᴇ»", BLUE_SHULKER_BOX, 0.14, "&#3735E2" ]
+  item3: [ "&#00D781&l«&#03CD89&lS&#07C291&lᴘ&#0AB899&lᴀ&#0DADA1&lᴄ&#10A3A9&lᴇ&#1498B1&lʟ&#178EB9&lɪ&#1A83C1&lɢ&#1D79C9&lʜ&#216ED1&lᴛ»", LIGHT_BLUE_SHULKER_BOX, 0.14, "&#07C291" ]
+  item4: [ "&#CCD800&l«&#B5D601&lE&#9ED403&lɴ&#87D104&lᴛ&#70CF05&lʀ&#59CD06&lᴏ&#42CB08&lᴘ&#2BC809&lʏ»", LIME_SHULKER_BOX, 0.14, "&#59CD06" ]
+  item5: [ "&#D7A600&l«&#D59A01&lF&#D48E02&lʀ&#D28203&lᴀ&#D17704&lᴄ&#CF6B05&lᴛ&#CD5F06&lᴀ&#CC5307&lʟ»", YELLOW_SHULKER_BOX, 0.13, "&#D28203" ]
+  item6: [ "&#7911D2&l«&#8311CA&lI&#8E12C2&lɴ&#9812BA&lꜰ&#A313B2&lɪ&#AD13AB&lɴ&#B814A3&lɪ&#C2149B&lᴛ&#CD1593&lʏ»", MAGENTA_SHULKER_BOX, 0.098, "&#8E12C2" ]
+  item7: [ "&#ffffff&l«Eᴛᴇʀɴɪᴛʏ»", CYAN_SHULKER_BOX, 0.084, "&#FFFFFF" ]
+  item8: [ "&#ffffff&l«Uɴɪᴠᴇʀꜱᴇ»", ORANGE_SHULKER_BOX, 0.06, "&#FF7200" ]
+  item9: [ "&#D91900&l«&#D91900&lC&#DE2900&lᴏ&#E23A00&lɴ&#E74A00&lꜱ&#EC5A00&lᴛ&#F16A00&lᴀ&#F57B00&lɴ&#FA8B00&lᴛ»", RED_SHULKER_BOX, 0.054, "&#D91900" ]
+
+time.chances:
+  time1: ["&#FFA50030 дней", "30d", 0.91]
+  time2: ["&#FFA50060 дней", "60d", 0.05]
+  time3: ["&#FFA50090 дней", "90d", 0.03]
+  time4: ["&#FFA500Навсегда", ";", 0.01]
+
+sounds.effects:
+  start: [BLOCK_ENCHANTMENT_TABLE_USE, 1.0, 1.0]
+  removeItem: [BLOCK_AMETHYST_BLOCK_FALL, 1.0, 0.0]
